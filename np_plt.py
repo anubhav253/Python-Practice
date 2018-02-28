@@ -40,6 +40,14 @@ print incomes
 plt.hist(incomes, 50)
 mean = np.mean(incomes)
 median = np.median(incomes)
+print mean
+print median
+
 
 incomes = np.append(incomes, [60000000000000000000])
 print mean
+
+
+#standard deviation and variance
+print incomes.std()
+print incomes.var()
