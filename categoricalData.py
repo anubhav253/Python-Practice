@@ -23,5 +23,13 @@ features = onehotencoder.fit_transform(features).toarray()
 
 labels = lb.fit_transform(labels)
 
+#splitting data
 from sklearn.model_selection import train_test_split
 features_train, features_test, labels_trains, labels_test = train_test_split(features, labels, test_size = .2, random_state = 0)
+
+#Feature scaling
+from sklearn.preprocessing import StandardScaler
+sc = StandardScaler()
+features_train = sc.fit_transform(features_train)
+features_test = sc.fit_transform(features_test)
+labels_trains = sc.fit_transform(labels_trains.reshape(-1, 1))
