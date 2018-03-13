@@ -22,3 +22,6 @@ onehotencoder = OneHotEncoder(categorical_features = [0, 1])
 features = onehotencoder.fit_transform(features).toarray()
 
 labels = lb.fit_transform(labels)
+
+from sklearn.model_selection import train_test_split
+features_train, features_test, labels_trains, labels_test = train_test_split(features, labels, test_size = .2, random_state = 0)
