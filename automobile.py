@@ -21,6 +21,10 @@ new_data["num_doors"] = new_data['num_doors'].fillna(new_data['num_doors'].mode(
 lst = ["convertible", "hardtop", "hatchback", "sedan", "wagon"]
 v = 0
 
+#label encoding for column body_style
 for i in lst:
     new_data["body_style"][new_data["body_style"] == i] = v
     v += 1
+    
+#one hot encoding
+new_data2 = pd.get_dummies(new_data, columns = ["drive_wheels", "body_style"])
