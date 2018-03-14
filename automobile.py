@@ -10,7 +10,11 @@ import pandas as pd
 am = pd.read_csv('Automobile.csv')
 new_data = pd.DataFrame()
 
+#object datatype column in one dataframe
 for i in am:
     if am[i].dtype == object:
         new_data[i] = am[i]
+
+#missing values
+new_data["num_doors"] = new_data['num_doors'].fillna(new_data['num_doors'].mode()[0])
 
