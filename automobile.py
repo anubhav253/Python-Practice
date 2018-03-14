@@ -18,3 +18,9 @@ for i in am:
 #missing values
 new_data["num_doors"] = new_data['num_doors'].fillna(new_data['num_doors'].mode()[0])
 
+lst = ["convertible", "hardtop", "hatchback", "sedan", "wagon"]
+v = 0
+
+for i in lst:
+    new_data["body_style"][new_data["body_style"] == i] = v
+    v += 1
