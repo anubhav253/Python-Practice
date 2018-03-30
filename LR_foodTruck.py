@@ -21,3 +21,12 @@ features_train, features_test, labels_train, labels_test = train_test_split(feat
 from sklearn.linear_model import LinearRegression
 re = LinearRegression()
 re.fit(features_train,labels_train)
+#predicting profits for test data
+labels_pred = re.predict(features_test)
+#plotting the graph
+plt.scatter(features_train, labels_train, color='blue')
+plt.plot(features_train, re.predict(features_train),color='red')
+plt.title("Population vs Profit")
+plt.xlabel("Population")
+plt.ylabel("Profit")
+plt.show()
