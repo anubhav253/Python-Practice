@@ -25,6 +25,7 @@ re.fit(features_train,labels_train)
 labels_pred = re.predict(features_test)
 #plotting the graph
 plt.scatter(features_train, labels_train, color='blue')
+plt.scatter(features_test, labels_test, color='green')
 plt.plot(features_train, re.predict(features_train),color='red')
 plt.title("Population vs Profit")
 plt.xlabel("Population")
