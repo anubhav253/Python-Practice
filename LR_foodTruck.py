@@ -30,3 +30,5 @@ plt.title("Population vs Profit")
 plt.xlabel("Population")
 plt.ylabel("Profit")
 plt.show()
+#predicting profit or loss on the basis of population 
+labels_pred1 = re.predict(3.073)
