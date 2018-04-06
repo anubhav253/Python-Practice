@@ -32,3 +32,11 @@ for row in right.findAll('tr'):
         C.append(cells[2].find(text=True))
         D.append(cells[3].find(text=True))
         E.append(cells[4].find(text=True))
+
+#storing columns in a dataframe
+import pandas as pd
+df = pd.DataFrame(A,columns=['Pos'])
+df['Team']=B
+df['Matches']=C
+df['Points']=D
+df['Rating']=E
