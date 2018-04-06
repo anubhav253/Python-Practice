@@ -47,3 +47,21 @@ pred = reg.predict(f_test)
 #score for multiple LR model
 score = reg.score(f_train, l_train)
 
+#backward elimination
+import statsmodels.formula.api as sma
+features = np.append(arr = np.ones((30, 1)).astype(int), values = features, axis = 1)
+f_opt = features[:, [0,1,2,3,4,5]]
+reg_OLS = sma.OLS(endog = labels, exog = f_opt).fit()
+reg_OLS.summary()
+f_opt = features[:, [0,1,3,4,5]]
+reg_OLS = sma.OLS(endog = labels, exog = f_opt).fit()
+reg_OLS.summary()
+f_opt = features[:, [0,1,3,5]]
+reg_OLS = sma.OLS(endog = labels, exog = f_opt).fit()
+reg_OLS.summary()
+f_opt = features[:, [0,3,5]]
+reg_OLS = sma.OLS(endog = labels, exog = f_opt).fit()
+reg_OLS.summary()
+f_opt = features[:, [0,5]]
+reg_OLS = sma.OLS(endog = labels, exog = f_opt).fit()
+reg_OLS.summary()
