@@ -26,3 +26,13 @@ features = oh_enc.fit_transform(features).toarray()
 #avoiding dummy variable
 features = features[:, 1:]
 
+#splitting dataset
+from sklearn.model_selection import train_test_split
+f_train, f_test, l_train, l_test = train_test_split(features, labels, test_size = .2, random_state = 0)
+
+#feature scaling
+from sklearn.preprocessing import StandardScaler
+sc = StandardScaler()
+f_train = sc.fit_transform(f_train)
+f_test = sc.transform(f_test)
+
