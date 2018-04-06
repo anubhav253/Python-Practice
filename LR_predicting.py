@@ -29,3 +29,14 @@ Dangal_predict = regressor2.predict(10)
 #model score
 Score_bahu = regressor.score(features,labels_bahu)
 Score_dangal = regressor2.score(features,labels_dangal)
+#visualizing the training using the graph
+plt.plot(features, labels_bahu, color = 'red',label= 'Bahubali 2')
+plt.plot(features, labels_dangal,color='blue',label= 'Dangal')
+#collection for 10th day
+plt.scatter(10, regressor.predict(10),color='red')
+plt.scatter(10, regressor2.predict(10),color='blue')
+plt.title('Bahubali V/S Dangal')
+plt.xlabel('Days')
+plt.ylabel('Income')
+plt.legend()
+plt.show()
