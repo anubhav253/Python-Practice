@@ -36,3 +36,14 @@ sc = StandardScaler()
 f_train = sc.fit_transform(f_train)
 f_test = sc.transform(f_test)
 
+#Multiple LR fitting for traning data
+from sklearn.linear_model import LinearRegression
+reg = LinearRegression()
+reg.fit(f_train, l_train)
+
+#predicting test data
+pred = reg.predict(f_test)
+
+#score for multiple LR model
+score = reg.score(f_train, l_train)
+
