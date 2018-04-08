@@ -27,4 +27,8 @@ classifier = LogisticRegression(random_state = 0)
 classifier.fit(features_train, labels_trains)
 #predicting values for test data 1=true and 0=False
 labels_pred = classifier.predict(features_test)
-
+#confusion matrix for performance of classification model
+from sklearn.metrics import confusion_matrix
+cm = confusion_matrix(labels_test, labels_pred)
+#score of the model
+score = classifier.score(features_test, labels_test)
