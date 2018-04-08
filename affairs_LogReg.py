@@ -32,3 +32,15 @@ from sklearn.metrics import confusion_matrix
 cm = confusion_matrix(labels_test, labels_pred)
 #score of the model
 score = classifier.score(features_test, labels_test)
+
+#to find number of womens with affair
+i = 0
+count = 0
+
+while i < 6366:
+    if dataset["affair"][i] == 1:
+        count+=1
+    i+=1
+#number of womens with affairs and percentage
+print count
+print (float(count)/6366)*100
