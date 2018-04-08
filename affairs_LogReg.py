@@ -44,3 +44,7 @@ while i < 6366:
 #number of womens with affairs and percentage
 print count
 print (float(count)/6366)*100
+#for a random women of age=25,yrs_married=3, has 1 child, a 0ccu=4,educ=16, hus_occu=3 
+predict = np.array([0,0,1,0,0,1,0,0,0,0,3,25,3,1,4,16]).reshape(1,-1)
+#predicting if she had affair
+pred = classifier.predict(predict)
