@@ -50,3 +50,12 @@ label = lb.fit_transform(label)
 #labeled data encoding
 onehotencoder = OneHotEncoder(categorical_features = 'all')
 features = onehotencoder.fit_transform(features).toarray()
+#splitting dataset in train and test
+from sklearn.model_selection import train_test_split
+f_train, f_test, l_trains, l_test = train_test_split(features, label, test_size = .2, random_state = 0)
+#classifing data using KNeighbors regression model
+from sklearn.neighbors import KNeighborsClassifier
+classifier = KNeighborsClassifier(n_neighbors = 5, p = 2)
+classifier.fit(f_train, l_trains)
+#predicting result for test dataset
+l_pred = classifier.predict(f_test)
