@@ -59,3 +59,8 @@ classifier = KNeighborsClassifier(n_neighbors = 5, p = 2)
 classifier.fit(f_train, l_trains)
 #predicting result for test dataset
 l_pred = classifier.predict(f_test)
+#confusion matrix for performance of classification model
+from sklearn.metrics import confusion_matrix
+cm = confusion_matrix(l_test, l_pred)
+#score for the model performance
+Score = classifier.score(f_test, l_test)
