@@ -35,7 +35,7 @@ habitat: grasses=g,leaves=l,meadows=m,paths=p,urban=u,waste=w,woods=d """
 #Classification on the given dataset to predict if the mushroom is edible or poisonous on basis of habitat, population and odor as the predictors
 
 import pandas as pd
-#reading scv file
+#reading csv file
 ds = pd.read_csv('mushrooms.csv')
 features = ds.iloc[:, [5,21,22]].values
 label = ds.iloc[:, 0:1].values
